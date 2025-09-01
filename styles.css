@@ -1,0 +1,1235 @@
+/* 
+* Bcaitech Digital Business Card Creator
+* Main Stylesheet
+* Author: Claude
+* Version: 1.0
+*/
+
+/* Classic Card styles updated with main project CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700&display=swap');
+
+
+
+/* ------------------------------
+   Base Styles & Reset
+------------------------------ */
+
+:root {
+    --brand-red: #8B0000;
+    --brand-blue: #4285F4;
+    --dark: #000000;
+    --gray: #666666;
+    --light-gray: #f8f9fa;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    padding: 20px;
+    line-height: 1.6;
+    color: #343a40;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ------------------------------
+   Header Styles
+------------------------------ */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+header .logo-container {
+    margin-bottom: 20px;
+}
+
+header .header-logo {
+    max-height: 60px;
+    max-width: 200px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #212529;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header p {
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+/* ------------------------------
+   Main Content Layout
+------------------------------ */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 0 auto 50px;
+}
+
+/* ------------------------------
+   Form Section Styles
+------------------------------ */
+.form-section,
+.preview-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-section h2,
+.preview-section h2 {
+    color: #343a40;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+input[type="file"] {
+    border: none;
+    padding: 8px 0;
+    box-shadow: none;
+}
+
+input[type="color"] {
+    height: 40px;
+    width: 100%;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-hint {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.img-preview {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px dashed #ced4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.img-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Template Selection */
+.template-selection {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.template-option {
+    text-align: center;
+}
+
+.template-option input[type="radio"] {
+    display: none;
+}
+
+.template-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.template-option img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.template-option span {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.template-option input[type="radio"]:checked+label img {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#generateBtn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.action-btn {
+    flex: 1;
+    max-width: 200px;
+}
+
+#downloadBtn {
+    background-color: #28a745;
+}
+
+#downloadBtn:hover {
+    background-color: #218838;
+}
+
+#sendEmailBtn {
+    background-color: #17a2b8;
+}
+
+#sendEmailBtn:hover {
+    background-color: #138496;
+}
+
+/* ------------------------------
+   Preview Section Styles
+------------------------------ */
+#previewSection {
+    text-align: center;
+}
+
+#cardPreview {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* ------------------------------
+   Footer Styles
+------------------------------ */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #6c757d;
+    font-size: 14px;
+    padding: 20px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+/* ------------------------------
+   Card Templates
+------------------------------ */
+
+/* --- Classic Card Template (Updated) --- */
+/* Classic Card Styles */
+.business-card {
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    animation: cardEntrance 0.8s ease-out;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.classic-card {
+    background: white;
+    padding: 0;
+    text-align: center;
+    height: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header with cover image */
+.classic-header {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+}
+
+.classic-header .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile and company logo section */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px;
+    position: relative;
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    z-index: 2;
+}
+
+.profile-circle {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #8B0000;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.classic-card:hover .profile-circle {
+    transform: scale(1.05);
+    border-color: #b10000;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.company-logo-container {
+    width: 120px;
+    height: 80px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.classic-card:hover .company-logo-container {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.company-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Identity section */
+.identity-section {
+    padding: 10px 20px 5px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.classic-card .name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+}
+
+.classic-card:hover .name {
+    color: #8B0000;
+}
+
+.classic-card .position {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin: 8px 0 20px;
+    text-transform: none;
+    text-align: center;
+}
+
+/* Description styling */
+.classic-card .description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--dark);
+    text-align: left;
+    padding: 15px;
+    margin: 0 20px 20px;
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+/* Contact info styling */
+.classic-card .contact-info {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.classic-card .contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.classic-card .contact-item:hover {
+    color: #8B0000;
+    transform: translateX(5px);
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+}
+
+.classic-card .icon {
+    width: 40px;
+    height: 40px;
+    background: var(--light-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 16px;
+    color: inherit;
+    animation: icon-idle 2s infinite ease-in-out;
+    transition: all 0.3s ease;
+}
+
+@keyframes icon-idle {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.classic-card .contact-item:hover .icon {
+    background: #8B0000;
+    color: white;
+    transform: scale(1.1);
+}
+
+.classic-card .contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.classic-card .email,
+.classic-card .phone,
+.classic-card .text {
+    flex: 1;
+    font-size: 0.95rem;
+    color: inherit;
+    font-weight: 500;
+    text-align: left;
+}
+
+.classic-card .label {
+    font-size: 0.8rem;
+    color: var(--gray);
+    background: transparent;
+    padding: 0;
+    margin-left: 0;
+    text-align: left;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Save contact button */
+.classic-card .save-contact {
+    background: var(--dark) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 30px !important;
+    width: 90%;
+    margin: 15px auto;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.classic-card .save-contact::before {
+    content: "";
+    display: inline-block;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>');
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.classic-card .save-contact:hover {
+    background: #333 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.classic-card .save-contact:hover::before {
+    transform: rotate(10deg) scale(1.2);
+}
+
+.classic-card .save-contact::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.classic-card .save-contact:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Powered by section */
+.classic-card .powered-by {
+    text-align: center;
+    padding: 10px 0 20px;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.powered-by-brand {
+    font-weight: 600;
+    color: var(--brand-red);
+    background: linear-gradient(45deg, #8B0000, #DC143C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.classic-card:hover .powered-by-brand {
+    background: linear-gradient(45deg, #DC143C, #8B0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 380px) {
+    .business-card {
+        margin: 0 15px;
+    }
+
+    .classic-header {
+        height: 160px;
+    }
+
+    .profile-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .company-logo-container {
+        width: 100px;
+        height: 70px;
+    }
+
+    .classic-card .name {
+        font-size: 1.4rem;
+    }
+}
+
+/* --- Modern Card Template (Professional/Legal Style) --- */
+.modern-card {
+    position: relative;
+    padding: 0;
+    background: #fff;
+    color: #333;
+    overflow: hidden;
+    height: 650px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section */
+.modern-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    height: 60px;
+    object-fit: contain;
+}
+
+.header-right {
+    height: 100px;
+}
+
+.legal-symbol {
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Company Branding */
+.brand-ribbon {
+    background-color: #f8f8f8;
+    padding: 8px 15px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.company-tagline {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.profile-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Identity Section */
+.identity-section {
+    padding: 0 20px;
+    text-align: left;
+}
+
+.identity-section .name {
+    font-size: 24px;
+    color: #222;
+    margin: 0;
+    font-weight: 700;
+}
+
+.identity-section .position {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 15px;
+    font-weight: 500;
+    text-transform: none;
+}
+
+/* Certification Text */
+.certification-text {
+    margin: 10px 0 15px;
+}
+
+.license-text {
+    font-size: 13px;
+    color: #555;
+    font-style: italic;
+    margin: 0 0 5px;
+    position: relative;
+}
+
+.arabic-text {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* Description Section */
+.description-container {
+    padding: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+    margin: 0;
+}
+
+/* Contact Information */
+.contact-info {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    color: #fff;
+    font-size: 16px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.contact-details span {
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-details .label {
+    font-size: 12px;
+    color: #777;
+    background: none;
+    padding: 0;
+}
+
+.contact-details .text {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Save Contact Button */
+.save-contact-container {
+    padding: 0 20px;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.modern-card .save-contact {
+    background: #333;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.modern-card .save-contact:hover {
+    background: #222;
+    transform: translateY(-2px);
+}
+
+/* --- Elegant Card Template --- */
+.elegant-card {
+    background: white;
+    padding: 0;
+    text-align: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.elegant-header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-logo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo .logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #343a40;
+}
+
+.elegant-profile {
+    padding: 30px 20px;
+}
+
+.profile-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 3px solid #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.elegant-profile .name {
+    font-size: 26px;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.elegant-profile .position {
+    font-size: 16px;
+    color: #6c757d;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.elegant-divider {
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    margin: 0 auto 20px;
+}
+
+.elegant-card .description {
+    padding: 0 30px;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.elegant-contact {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.elegant-contact-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.elegant-contact-item:last-child {
+    border-bottom: none;
+}
+
+.elegant-contact-item:hover {
+    background: #f8f9fa;
+}
+
+.elegant-contact-item i {
+    color: #007bff;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.elegant-save {
+    background: #343a40;
+    width: 70%;
+    margin: 0 auto 30px;
+    border-radius: 5px;
+}
+
+.elegant-footer {
+    margin-top: auto;
+    background: #f8f9fa;
+    padding: 15px;
+    color: #6c757d;
+    font-size: 13px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* ------------------------------
+   Modal Styles
+------------------------------ */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-container.show .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--brand-red), #ff6b6b);
+}
+
+.modal-icon {
+    margin-bottom: 20px;
+}
+
+.modal-icon i {
+    font-size: 70px;
+    color: #28a745;
+    animation: modalIconAnimation 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIconAnimation {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+    animation: fadeInUp 0.4s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.modal-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    animation: fadeInUp 0.4s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.modal-button {
+    background-color: var(--brand-red);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+    margin-top: 10px;
+}
+
+.modal-button:hover {
+    background-color: #b10000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+.modal-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(139, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* For RTL languages (Arabic) */
+.modal-title, .modal-message, .modal-button {
+    font-family: 'Tajawal', 'Segoe UI', sans-serif;
+}
+
+/* ------------------------------
+   Animations
+------------------------------ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slideUp {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.pulse {
+    animation: pulse 1.5s ease infinite;
+}
+
+/* ------------------------------
+   Responsive Styles
+------------------------------ */
+@media (max-width: 992px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .template-selection {
+        justify-content: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
